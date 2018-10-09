@@ -67,7 +67,10 @@ public class GameBoard implements IGameModel
     public boolean isGameOver()
     {
         //TODO Implement this method
-        
+        if(getWinner() == 1 || getWinner() == 2)
+        {
+        return true;
+        }
         if (frieFelter != 0)
         {
         return false;
@@ -86,8 +89,15 @@ public class GameBoard implements IGameModel
      */
     public int getWinner()
     {
-        //TODO Implement this method
+        if (checkVinder() == true)
+        {
+        return Player;
+        }
+        else 
+        {
         return -1;
+        }
+        
     }
 
     /**
@@ -95,8 +105,10 @@ public class GameBoard implements IGameModel
      */
     public void newGame()
     {
-        for (int i = 0; i < gameBoard.length; i++)
-        Arrays.fill(gameBoard[i],0);
+      for (int[] gameBoard1 : gameBoard)
+      {
+          Arrays.fill(gameBoard1, 0);
+      }
         Player = 2;
         frieFelter = 9;
         {
@@ -108,4 +120,34 @@ public class GameBoard implements IGameModel
         return Player;
     }
 
+    public boolean checkVinder()
+    {
+      for (int[] gameBoard1 : gameBoard)
+      {
+          if (gameBoard1[0] == Player && gameBoard1[1] == Player && gameBoard1[2] == Player)
+          {
+              return true;
+          }
+      }
+        for (int i = 0; i < gameBoard.length; i++)
+        {
+            if (gameBoard [0][i] == Player && gameBoard [1][i] == Player && gameBoard [2][i] == Player )
+            {
+                return true;
+            }
+        }
+        if (gameBoard [0][0] == Player && gameBoard [1][1] == Player && gameBoard [2][2] == Player )
+        {
+            return true;
+        }
+        else if (gameBoard [2][0] == Player && gameBoard [1][1] == Player && gameBoard [0][2] == Player )
+        {
+            return true;
+        }
+        else
+        {
+        return false;
+        }
+    }
+    
 }
