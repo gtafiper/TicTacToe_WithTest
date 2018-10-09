@@ -15,7 +15,7 @@ public class GameBoard implements IGameModel
 {
   public int Player = 2;  
   int[][] gameBoard = new int [3][3];  
-    
+  public int frieFelter = 9;  
 
     /**
      * Returns 0 for player 0, 1 for player 1.
@@ -58,6 +58,7 @@ public class GameBoard implements IGameModel
         else
         {
             gameBoard[col][row] = Player;
+            frieFelter --;
             return true;
         }
         
@@ -66,7 +67,16 @@ public class GameBoard implements IGameModel
     public boolean isGameOver()
     {
         //TODO Implement this method
+        
+        if (frieFelter != 0)
+        {
         return false;
+        }
+        else
+        {
+        return true;
+        }
+        
     }
 
     /**
@@ -88,6 +98,7 @@ public class GameBoard implements IGameModel
         for (int i = 0; i < gameBoard.length; i++)
         Arrays.fill(gameBoard[i],0);
         Player = 2;
+        frieFelter = 9;
         {
             
         }
