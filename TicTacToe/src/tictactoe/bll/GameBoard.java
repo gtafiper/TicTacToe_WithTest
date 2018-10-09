@@ -69,15 +69,15 @@ public class GameBoard implements IGameModel
         //TODO Implement this method
         if(getWinner() == 1 || getWinner() == 2)
         {
-        return true;
+            return true;
         }
         if (frieFelter != 0)
         {
-        return false;
+            return false;
         }
         else
         {
-        return true;
+            return true;
         }
         
     }
@@ -91,11 +91,11 @@ public class GameBoard implements IGameModel
     {
         if (checkVinder() == true)
         {
-        return Player;
+            return Player;
         }
         else 
         {
-        return -1;
+            return -1;
         }
         
     }
@@ -111,9 +111,6 @@ public class GameBoard implements IGameModel
       }
         Player = 2;
         frieFelter = 9;
-        {
-            
-        }
     }
     
     public int getPlayer() {
@@ -122,9 +119,9 @@ public class GameBoard implements IGameModel
 
     public boolean checkVinder()
     {
-      for (int[] gameBoard1 : gameBoard)
+      for (int i = 0; i < gameBoard.length; i++)
       {
-          if (gameBoard1[0] == Player && gameBoard1[1] == Player && gameBoard1[2] == Player)
+          if (gameBoard[i][0] == Player && gameBoard[i][1] == Player && gameBoard[i][2] == Player)
           {
               return true;
           }
@@ -146,7 +143,7 @@ public class GameBoard implements IGameModel
         }
         else
         {
-        return false;
+            return false;
         }
     }
     
