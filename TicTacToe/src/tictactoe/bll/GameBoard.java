@@ -92,5 +92,9 @@ public class GameBoard implements IGameModel
             
         }
     }
+    
+    public int getPlayer() {
+        return Player;
+    }
 
 }

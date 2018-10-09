@@ -11,7 +11,7 @@ package tictactoe.bll;
  */
 public interface IGameModel
 {
-
+    public int getPlayer();
     /**
      * Returns 0 for player 0, 1 for player 1.
      *
