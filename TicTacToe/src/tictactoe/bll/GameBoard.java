@@ -11,6 +11,9 @@ package tictactoe.bll;
  */
 public class GameBoard implements IGameModel
 {
+  public int Player = 0;  
+    
+    
 
     /**
      * Returns 0 for player 0, 1 for player 1.
@@ -19,9 +22,18 @@ public class GameBoard implements IGameModel
      */
     public int getNextPlayer()
     {
-        //TODO Implement this method
-        return 0;
+        if (Player == 0)
+        {
+            Player = 1;
+        }
+        else  
+     
+        {
+             Player = 0; 
+        }
+        return Player;
     }
+    
 
     /**
      * Attempts to let the current player play at the given coordinates. It the
