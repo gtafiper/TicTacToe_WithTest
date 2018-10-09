@@ -5,14 +5,16 @@
  */
 package tictactoe.bll;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Stegger
  */
 public class GameBoard implements IGameModel
 {
-  public int Player = 0;  
-    
+  public int Player = 2;  
+  int[][] gameBoard = new int [3][3];  
     
 
     /**
@@ -22,14 +24,14 @@ public class GameBoard implements IGameModel
      */
     public int getNextPlayer()
     {
-        if (Player == 0)
+        if (Player == 1)
         {
-            Player = 1;
+            Player = 2;
         }
         else  
      
         {
-             Player = 0; 
+             Player = 1; 
         }
         return Player;
     }
@@ -48,7 +50,17 @@ public class GameBoard implements IGameModel
     public boolean play(int col, int row)
     {
         //TODO Implement this method
-        return true;
+        
+        if (gameBoard [col][row] == 1 || gameBoard [col][row] == 2)
+        {
+            return false;
+        }
+        else
+        {
+            gameBoard[col][row] = Player;
+            return true;
+        }
+        
     }
 
     public boolean isGameOver()
@@ -73,7 +85,12 @@ public class GameBoard implements IGameModel
      */
     public void newGame()
     {
-        //TODO Implement this method
+        for (int i = 0; i < gameBoard.length; i++)
+        Arrays.fill(gameBoard[i],0);
+        Player = 2;
+        {
+            
+        }
     }
 
 }
