@@ -60,6 +60,7 @@ public class GameBoard implements IGameModel
             gameBoard[col][row] = Player;
             frieFelter --;
             return true;
+           
         }
         
     }
@@ -79,7 +80,7 @@ public class GameBoard implements IGameModel
         {
             return true;
         }
-        
+      
     }
 
     /**
@@ -113,10 +114,12 @@ public class GameBoard implements IGameModel
         frieFelter = 9;
     }
     
-    public int getPlayer() {
+    public int getPlayer() 
+    {
         return Player;
     }
-
+    
+    // Checks if there is a winer and if so displays the winner 
     public boolean checkVinder()
     {
       for (int i = 0; i < gameBoard.length; i++)
@@ -146,5 +149,5 @@ public class GameBoard implements IGameModel
             return false;
         }
     }
-    
+
 }

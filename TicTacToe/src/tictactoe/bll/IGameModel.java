@@ -11,7 +11,7 @@ package tictactoe.bll;
  */
 public interface IGameModel
 {
-    public int getPlayer();
+  
     /**
      * Returns 0 for player 0, 1 for player 1.
      *
@@ -30,13 +30,13 @@ public interface IGameModel
      * true this method will always return false.
      */
     public boolean play(int col, int row);
-     /**
+
+    /**
      * Tells us if the game has ended either by draw or by meeting the winning
      * condition.
      *
      * @return true if the game is over, else it will retun false.
      */
-    
     public boolean isGameOver();
 
     /**
@@ -50,4 +50,6 @@ public interface IGameModel
      * Resets the game to a new game state.
      */
     public void newGame();
+    
+    public int getPlayer();
 }

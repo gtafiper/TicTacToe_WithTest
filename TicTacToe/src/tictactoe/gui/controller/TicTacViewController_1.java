@@ -20,29 +20,25 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import tictactoe.bll.GameBoard;
-import tictactoe.bll.IGameModel;
+import tictactoe.bll.GameBoardHighScore;
+import tictactoe.bll.IGameModelHighScore;
 
 /**
  *
  * @author Stegger
  */
-public class TicTacViewController implements Initializable
+public class TicTacViewController_1 implements Initializable
 {
 
+    private static final String TXT_PLAYER = "Player: ";
+    private IGameModelHighScore game;
+    
     @FXML
     private Label lblPlayer;
-
     @FXML
     private Button btnNewGame;
-
     @FXML
     private GridPane gridPane;
-    
-    private static final String TXT_PLAYER = "Player: ";
-    private IGameModel game;
-    @FXML
-    private BorderPane rootPane1;
     @FXML
     private Button btnBack;
     @FXML
@@ -63,6 +59,20 @@ public class TicTacViewController implements Initializable
     private Button btn8;
     @FXML
     private Button btn9;
+    @FXML
+    private BorderPane rootPane2;
+    @FXML
+    private Label lblPlayer1;
+    @FXML
+    private Label lblPlayer2;
+    @FXML
+    private Label lblPlayer1Score;
+    @FXML
+    private Label lblPlayer2Score;
+    @FXML
+    private Label lblDraw;
+    @FXML
+    private Label lblDrawScore;
 
     @FXML
     private void handleButtonAction(ActionEvent event)
@@ -83,6 +93,7 @@ public class TicTacViewController implements Initializable
                     btn.setText(xOrO);
                     int winner = game.getWinner();
                     displayWinner(winner);
+                    //game.getScore(1)
                 }
                 else
                 {
@@ -109,7 +120,7 @@ public class TicTacViewController implements Initializable
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        game = new GameBoard();
+        game = new GameBoardHighScore();
         setPlayer();
     }
 
@@ -146,7 +157,7 @@ public class TicTacViewController implements Initializable
     @FXML
     private void handleButtonBack(ActionEvent event) throws IOException
     {
-        Stage stage = (Stage) rootPane1.getScene().getWindow();
+        Stage stage = (Stage) rootPane2.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass().getResource("/tictactoe/gui/views/MainScreen.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
