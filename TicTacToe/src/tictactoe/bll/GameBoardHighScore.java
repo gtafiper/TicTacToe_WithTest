@@ -11,20 +11,36 @@ package tictactoe.bll;
  */
 public class GameBoardHighScore extends GameBoard implements IGameModelHighScore
 {
-//    private int Player1 = 0;
-//    private int Player2 = 0;
-            
+    private int Player1 = 0;
+    private int Player2 = 0;
+    private int draw = 0;
+    public int score;       
             
     @Override
     public int getScore(int player)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Player;
     }
 
     @Override
     public void incrementScore(int playerno)
     {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if (Player1 == getWinner())
+        {
+            Player1 ++;
+           
+        }
+        if (Player2 == getWinner())
+        {
+            Player2 ++;
+           
+        }
+//        else (frieFelter == getWinner())
+//        [
+//            draw ++;
+//            return true;
+//        ]
+          
     }
     
 }

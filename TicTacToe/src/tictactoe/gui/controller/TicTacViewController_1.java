@@ -93,7 +93,8 @@ public class TicTacViewController_1 implements Initializable
                     btn.setText(xOrO);
                     int winner = game.getWinner();
                     displayWinner(winner);
-                    //game.getScore(1)
+                    
+                    
                 }
                 else
                 {

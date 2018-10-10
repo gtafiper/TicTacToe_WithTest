@@ -16,7 +16,8 @@ public class GameBoard implements IGameModel
   public int Player = 2;  
   int[][] gameBoard = new int [3][3];  
   public int frieFelter = 9;  
-
+  
+   private IGameModelHighScore game;
     /**
      * Returns 1 for player 1, 2 for player 2.
      *
@@ -92,7 +93,7 @@ public class GameBoard implements IGameModel
     {
         if (checkVinder() == true)
         {
-            return Player;
+            return Player;    
         }
         else 
         {

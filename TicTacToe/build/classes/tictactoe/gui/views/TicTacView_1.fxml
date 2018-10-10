@@ -67,9 +67,9 @@
             <VBox alignment="CENTER" prefHeight="397.0" prefWidth="60.0" BorderPane.alignment="CENTER">
                <children>
                   <Label fx:id="lblPlayer2" text="player 1" />
-                  <Label fx:id="lblPlayer1Score" prefHeight="25.0" prefWidth="25.0" />
+                  <Label fx:id="lblPlayer1Score" prefHeight="25.0" prefWidth="55.0" />
                   <Label fx:id="lblPlayer1" text="player 2" />
-                  <Label fx:id="lblPlayer2Score" prefHeight="25.0" prefWidth="25.0" />
+                  <Label fx:id="lblPlayer2Score" prefHeight="25.0" prefWidth="59.0" />
                   <Label fx:id="lblDraw" text="Draw" />
                   <Label fx:id="lblDrawScore" prefHeight="25.0" prefWidth="25.0" />
                </children>
