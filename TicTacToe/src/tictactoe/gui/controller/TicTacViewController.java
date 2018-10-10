@@ -30,17 +30,16 @@ import tictactoe.bll.IGameModel;
 public class TicTacViewController implements Initializable
 {
 
-    @FXML
-    private Label lblPlayer;
-
-    @FXML
-    private Button btnNewGame;
-
-    @FXML
-    private GridPane gridPane;
     
     private static final String TXT_PLAYER = "Player: ";
     private IGameModel game;
+    
+    @FXML
+    private Label lblPlayer;
+    @FXML
+    private Button btnNewGame;
+    @FXML
+    private GridPane gridPane;  
     @FXML
     private BorderPane rootPane1;
     @FXML

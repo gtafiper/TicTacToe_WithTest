@@ -18,7 +18,7 @@ public class GameBoard implements IGameModel
   public int frieFelter = 9;  
 
     /**
-     * Returns 0 for player 0, 1 for player 1.
+     * Returns 1 for player 1, 2 for player 2.
      *
      * @return int Id of the next player.
      */
@@ -64,7 +64,7 @@ public class GameBoard implements IGameModel
         }
         
     }
-
+    //Checks if the game is over 
     public boolean isGameOver()
     {
         //TODO Implement this method
@@ -114,11 +114,13 @@ public class GameBoard implements IGameModel
         frieFelter = 9;
     }
     
+
+    //returns the player int 
     public int getPlayer() 
     {
         return Player;
     }
-    
+
     // Checks if there is a winer and if so displays the winner 
     public boolean checkVinder()
     {

@@ -11,8 +11,8 @@ package tictactoe.bll;
  */
 public class GameBoardHighScore extends GameBoard implements IGameModelHighScore
 {
-//    private int Player = 0;
-//    private int Player = 0;
+//    private int Player1 = 0;
+//    private int Player2 = 0;
             
             
     @Override
