@@ -55,6 +55,9 @@ public class TicTacViewController implements Initializable
                     btn.setText(xOrO);
                     int winner = game.getWinner();
                     displayWinner(winner);
+                    
+                   
+                    
                 }
                 else
                 {
@@ -104,6 +107,9 @@ public class TicTacViewController implements Initializable
                 break;
         }
         lblPlayer.setText(message);
+        clearBoard();
+        game.newGame();
+        
     }
 
     private void clearBoard()
