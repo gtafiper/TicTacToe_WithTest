@@ -148,7 +148,7 @@ public class TicTacViewController_1 implements Initializable
         }
         lblPlayer.setText(message);
     }
-
+    
     private void clearBoard()
     {
         for(Node n : gridPane.getChildren())
@@ -157,7 +157,12 @@ public class TicTacViewController_1 implements Initializable
             btn.setText("");
         }
     }
-
+    
+    /**
+     * går tilbage til startskærmen
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     private void handleButtonBack(ActionEvent event) throws IOException
     {
@@ -167,6 +172,9 @@ public class TicTacViewController_1 implements Initializable
         stage.setScene(scene);
     }
 
+    /**
+     * putter scoren i labels
+     */
     private void getScores() {
         lblPlayer1Score.setText(String.valueOf(game.getScoreOne()));
         lblPlayer2Score.setText(String.valueOf(game.getScoreTwo()));

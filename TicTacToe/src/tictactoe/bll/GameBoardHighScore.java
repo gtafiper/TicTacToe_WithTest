@@ -15,7 +15,11 @@ public class GameBoardHighScore extends GameBoard implements IGameModelHighScore
     private int Player2 = 0;
     private int draw = 0;
     public int score;       
-            
+    
+    /**
+     * getScoreOne->Draw er den som sender videresender værdien
+     * @return 
+     */
     @Override
     public int getScoreOne()
     {
@@ -32,6 +36,10 @@ public class GameBoardHighScore extends GameBoard implements IGameModelHighScore
         return draw;
     }
 
+    /**
+     * Giver et point til vinderne.
+     * @param playerno 
+     */
     @Override
     public void incrementScore(int playerno)
     {
