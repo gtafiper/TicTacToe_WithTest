@@ -84,17 +84,19 @@ public class TicTacViewController_1 implements Initializable
             int r = (row == null) ? 0 : row;
             int c = (col == null) ? 0 : col;
             int player = game.getPlayer();
-            if (game.play(c, r))
+            if (game.isGameOver()) {}
+            else if (game.play(c, r))
             {
                 if (game.isGameOver())
                 {
-                    Button btn = (Button) event.getSource();
+                    
+                                        Button btn = (Button) event.getSource();
                     String xOrO = player == 2 ? "O" : "X";
                     btn.setText(xOrO);
                     int winner = game.getWinner();
                     displayWinner(winner);
-                    
-                    
+                    game.incrementScore(winner);
+                    getScores();
                 }
                 else
                 {
@@ -122,6 +124,7 @@ public class TicTacViewController_1 implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         game = new GameBoardHighScore();
+        getScores();
         setPlayer();
     }
 
@@ -164,4 +167,9 @@ public class TicTacViewController_1 implements Initializable
         stage.setScene(scene);
     }
 
+    private void getScores() {
+        lblPlayer1Score.setText(String.valueOf(game.getScoreOne()));
+        lblPlayer2Score.setText(String.valueOf(game.getScoreTwo()));
+        lblDrawScore.setText(String.valueOf(game.getScoreDraw()));
+    }
 }

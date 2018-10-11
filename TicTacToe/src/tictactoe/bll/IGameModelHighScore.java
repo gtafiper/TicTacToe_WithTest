@@ -11,6 +11,8 @@ package tictactoe.bll;
  */
 public interface IGameModelHighScore extends IGameModel
 {
-    public int getScore(int player);
+    public int getScoreOne();
+    public int getScoreTwo();
+    public int getScoreDraw();
     public void incrementScore(int playerno);
 }

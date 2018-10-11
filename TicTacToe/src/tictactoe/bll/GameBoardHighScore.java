@@ -17,30 +17,38 @@ public class GameBoardHighScore extends GameBoard implements IGameModelHighScore
     public int score;       
             
     @Override
-    public int getScore(int player)
+    public int getScoreOne()
     {
-        return Player;
+        return Player1;
+    }
+    @Override
+    public int getScoreTwo()
+    {
+        return Player2;
+    }
+    @Override
+    public int getScoreDraw()
+    {
+        return draw;
     }
 
     @Override
     public void incrementScore(int playerno)
     {
-        if (Player1 == getWinner())
+        switch (getWinner())
         {
-            Player1 ++;
-           
+            case 1:
+                Player1 ++;
+                break;
+            case 2:
+                Player2 ++;
+                break;
+            case -1:
+                draw++;
+                break;
         }
-        if (Player2 == getWinner())
-        {
-            Player2 ++;
-           
-        }
-//        else (frieFelter == getWinner())
-//        [
-//            draw ++;
-//            return true;
-//        ]
           
     }
+    
     
 }
